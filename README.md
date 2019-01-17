@@ -1,0 +1,2 @@
+# FuzzyVisualEncoding
+Modeling visual categories using fuzzy methods. Fuzzy clustering is used to improve on the typical k-means and GMM clustering methods. The Gustaffson-Kessel algorithms is used to improve the cluster and membership functions over what is achievable by using k-means and GMM. The complex distribution of semantically equivalent visual feature descriptor vectors is better modeled by the extra parameters availed by the Gustaffson-Kessel and the Gath-Geva fuzzy clustering methods used in this project.
