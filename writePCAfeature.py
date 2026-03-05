@@ -8,7 +8,7 @@ pcaProj = pcaModel.transform(Y)
 
 #global imports
 import sys
-from optparse import OptionParser
+import argparse
 import numpy as np
 from sklearn.decomposition import PCA
 
@@ -48,7 +48,7 @@ def writeLowerdim():
     pcaModel = pca.fit(fvector)
     fv10 = pcaModel.transform(fvector)
     fv10Path = rootDir+dataset+fvectorDir+dataset+str(lowerdim)+tabext
-    print 'writing %s'%(dataset)
+    print(print 'writing %s'%(dataset))
     np.savetxt(fv10Path, fv10, fmt='%f', delimiter='\t')
     
     catmap = getCatMap(dataset)
@@ -57,7 +57,7 @@ def writeLowerdim():
     for catName in catList:
         catTabFileDir = rootDir+dataset+tabDir
         catTabFilePath = catTabFileDir+catName+tabext
-        print 'reading %s...'%(catName)
+        print(print 'reading %s...'%(catName))
         catData = np.loadtxt(catTabFilePath, dtype=np.int, delimiter='\t')
         catData10 = pcaModel.transform(catData)
         catTab10FilePath = catTabFileDir+catName+str(lowerdim)+tabext

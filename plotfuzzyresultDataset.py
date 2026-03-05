@@ -5,7 +5,7 @@ Created on 19 Jan 2012
 '''
 
 import numpy as np
-from optparse import OptionParser
+import argparse
 import sys
 import matplotlib.pyplot as plt
 #global paths

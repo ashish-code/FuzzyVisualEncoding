@@ -9,7 +9,7 @@ work the negative images should be rather than feature descriptors.
 
 #global imports
 import sys
-from optparse import OptionParser
+import argparse
 import numpy as np
 
 
@@ -49,7 +49,7 @@ def writeFuzzyFeatureVectorBinaryClassifier():
     clusterData = None
     for catName in (catList):
         catFilePath = dataPath+catName+descext
-        print 'reading %s'%(catName)
+        print(print 'reading %s'%(catName))
         catData = np.loadtxt(catFilePath,dtype=np.int16,usecols=np.arange(2,dim+2)) # this would not hold in a generic scenario
         if(catData.shape[0] <= nSamplePerCategory):
             catSample = catData
@@ -63,7 +63,7 @@ def writeFuzzyFeatureVectorBinaryClassifier():
     
     outDir = rootDir+dataset+tabDir
     outPath = outDir+dataset+tabext
-    print 'saving...'
+    print('saving...')
     np.savetxt(outPath, clusterData, fmt='%d', delimiter='\t')
     
     

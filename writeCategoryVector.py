@@ -6,7 +6,7 @@ Write the feature vector in tab format for clustering
 
 #global imports
 import sys
-from optparse import OptionParser
+import argparse
 import numpy as np
 import os
 
@@ -42,13 +42,13 @@ def writeTabFeatureVector():
     
     for catName in catList:
         catFilePath = rootDir+dataset+dataDir+catName+descext
-        print 'reading %s'%(catName)
+        print(print 'reading %s'%(catName))
         catData = np.loadtxt(catFilePath,dtype=np.int16,usecols=np.arange(2,dim+2)) # this would not hold in a generic scenario
         catTabFileDir = rootDir+dataset+tabDir
         if not os.path.exists(catTabFileDir):
             os.mkdir(catTabFileDir)
         catTabFilePath = catTabFileDir+catName+tabext
-        print 'writing %s'%(catName)
+        print(print 'writing %s'%(catName))
         np.savetxt(catTabFilePath, catData, fmt='%d', delimiter='\t')
         pass
 

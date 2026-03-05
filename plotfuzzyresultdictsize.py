@@ -7,7 +7,7 @@ plot fuzzy encoding result for different dictionary sizes for caltech101
 
 
 import numpy as np
-from optparse import OptionParser
+import argparse
 import sys
 import matplotlib.pyplot as plt
 #global paths
